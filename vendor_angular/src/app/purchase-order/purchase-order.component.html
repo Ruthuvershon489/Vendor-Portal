@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+</head>
+
+<body>
+	<br>
+	<div class="container">
+		<h1> <b> <u>PURCHASE HEAD DETAILS</u></b></h1>
+
+		<div class="search">
+			<label style="color: white;"> <b>Search By :-</b></label>
+			<input class="search-box" type="text" name="search" [(ngModel)]="searchtext1"
+				placeholder="Enter the field to search">
+		</div>
+
+		<div class="responsive-table">
+			<table>
+				<th *ngFor="let column of PO_HEAD_headers" class="table-header" style="white-space: nowrap">
+					{{column}}&nbsp; <i (click)="sort1('id1')" class='fa fa-sort'></i>
+				</th>
+				<tr *ngFor="let row of PO_HEAD | orderBy: key1: reverse1 | filter: searchtext1" class="table-row"
+					style="color: white;">
+					<td *ngFor="let column of PO_HEAD_names">
+						{{row[column]}}
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<br><br>
+
+		<h1> <b> <u>PURCHASE VALUE DETAILS</u></b></h1>
+
+		<div class="search">
+			<label style="color: white;"> <b>Search By :-</b></label>
+			<input class="search-box" type="text" name="search" [(ngModel)]="searchtext2"
+				placeholder="Enter the field to search">
+		</div>
+
+		<div class="responsive-table">
+			<table>
+				<th *ngFor="let column of PO_VAL_headers" class="table-header" style="white-space: nowrap">
+					{{column}}&nbsp; <i (click)="sort2('id2')" class='fa fa-sort'></i>
+				</th>
+				<tr *ngFor="let row of PO_VAL | orderBy: key2: reverse2 | filter: searchtext2" class="table-row"
+					style="color: white;">
+					<td *ngFor="let column of PO_VAL_names">
+						{{row[column]}}
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+	<body>
+		<h1>PURCHASE HEAD DETAILS</h1>
+		<table id="users">
+			<tr>
+				<th *ngFor = "let column of PO_HEAD_headers">
+					{{column}}
+				</th>
+			</tr>
+			<tr *ngFor = "let row of PO_HEAD">
+				<td *ngFor = "let column of PO_HEAD_names">
+					{{row[column]}}
+				</td>
+			</tr>					
+		</table>
+		<h1>PURCHASE VALUE DETAILS</h1>
+		<table id="users">
+			<tr>
+				<th *ngFor = "let column of PO_VAL_headers">
+					{{column}}
+				</th>
+			</tr>
+			<tr *ngFor = "let row of PO_VAL">
+				<td *ngFor = "let column of PO_VAL_names">
+					{{row[column]}}
+				</td>
+			</tr>					
+		</table>
+	</body>
+</html> -->
